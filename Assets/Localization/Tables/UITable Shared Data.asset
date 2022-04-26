@@ -1,0 +1,251 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: UITable Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: UITable
+  m_TableCollectionNameGuidString: 91f31c18e9b526248ba7a0e87624d86b
+  m_Entries:
+  - m_Id: 17082740736
+    m_Key: newGame-btn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 510194479104
+    m_Key: resurme-btn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2889774133248
+    m_Key: score
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33407693615104
+    m_Key: difficult
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33603072684032
+    m_Key: colorDifficult
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35342567993344
+    m_Key: settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35376709627904
+    m_Key: sounds
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35400252256256
+    m_Key: mode
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37689125892096
+    m_Key: stats-allGames
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37870466625536
+    m_Key: stats-bestScore
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38149882769408
+    m_Key: stats-highestNumber
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38502070087680
+    m_Key: stats-totalGamesPlayed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38830639280128
+    m_Key: stats-gamesPlayed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38958724935680
+    m_Key: stats-mostMoves
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42680737722368
+    m_Key: stats-resetStats
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43409204441088
+    m_Key: back
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44060005232640
+    m_Key: stats-confirmTitle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44266914443264
+    m_Key: stats-confirmMessage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45034744705024
+    m_Key: yes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45167880302592
+    m_Key: no
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51172286525440
+    m_Key: removeAds
+    m_Metadata:
+      m_Items: []
+  - m_Id: 67302732460032
+    m_Key: watchAd
+    m_Metadata:
+      m_Items: []
+  - m_Id: 67464942972928
+    m_Key: ad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 82901609082880
+    m_Key: shop-bought
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83057268092928
+    m_Key: shop-noCoins
+    m_Metadata:
+      m_Items: []
+  - m_Id: 84561081266176
+    m_Key: shop-selected
+    m_Metadata:
+      m_Items: []
+  - m_Id: 84569968996352
+    m_Key: shop-select
+    m_Metadata:
+      m_Items: []
+  - m_Id: 94282366447616
+    m_Key: colors
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96514709254144
+    m_Key: shop-theme
+    m_Metadata:
+      m_Items: []
+  - m_Id: 99318035247104
+    m_Key: pause
+    m_Metadata:
+      m_Items: []
+  - m_Id: 99993536294912
+    m_Key: mainMenu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101203458781184
+    m_Key: gameOver
+    m_Metadata:
+      m_Items: []
+  - m_Id: 106636143620096
+    m_Key: newBestScore
+    m_Metadata:
+      m_Items: []
+  - m_Id: 410529784262656
+    m_Key: youPurchse
+    m_Metadata:
+      m_Items: []
+  - m_Id: 411748552536064
+    m_Key: adsRemoved
+    m_Metadata:
+      m_Items: []
+  - m_Id: 412943614603264
+    m_Key: purchaseFailed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1171883164037120
+    m_Key: tutorial-points
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1172538117189632
+    m_Key: tutorial-combine
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1173280848736256
+    m_Key: tutorial-hints
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1173717589028864
+    m_Key: tutorial-undo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1174314279104512
+    m_Key: tutorial-refresh
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1174374832271360
+    m_Key: tutorial-bomb
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1174420415967232
+    m_Key: tutorial-score
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1175851885785088
+    m_Key: play
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1175929228750848
+    m_Key: next
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1810721850912768
+    m_Key: theme-standard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1811435612401664
+    m_Key: theme-shapes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1811783504752640
+    m_Key: theme-hex
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1812289589473280
+    m_Key: theme-discovery
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1812553398611968
+    m_Key: theme-polygons
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1812900565348352
+    m_Key: theme-arches
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1813147186229248
+    m_Key: theme-abstract
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1813468729962496
+    m_Key: theme-geometric
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1813819931619328
+    m_Key: theme-space
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2188266450579456
+    m_Key: share-title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2188419714641920
+    m_Key: share-message
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    id: 0
+  references:
+    version: 1
+    00000000:
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1636621075447

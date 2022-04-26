@@ -1,0 +1,255 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: UITable_de
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: de
+  m_SharedData: {fileID: 11400000, guid: 91f31c18e9b526248ba7a0e87624d86b, type: 2}
+  m_Metadata:
+    m_Items:
+    - id: 0
+  m_TableData:
+  - m_Id: 17082740736
+    m_Localized: Neues spiel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 510194479104
+    m_Localized: Fortfahren
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33407693615104
+    m_Localized: "Komplexit\xE4t"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33603072684032
+    m_Localized: '{num} Farben'
+    m_Metadata:
+      m_Items:
+      - id: 0
+  - m_Id: 35342567993344
+    m_Localized: Einstellungen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35376709627904
+    m_Localized: "Ger\xE4usche"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35400252256256
+    m_Localized: Modus
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37689125892096
+    m_Localized: Alle Spiele
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37870466625536
+    m_Localized: 'Bestes Ergebnis:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38149882769408
+    m_Localized: "H\xF6chste Zahl:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38502070087680
+    m_Localized: 'Gesamtzahl der gespielten Spiele:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38830639280128
+    m_Localized: 'Spiele gespielt:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38958724935680
+    m_Localized: 'Die meisten Bewegungen:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42680737722368
+    m_Localized: "Statistiken zur\xFCcksetzen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43409204441088
+    m_Localized: "Zur\xFCck"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44060005232640
+    m_Localized: Bist du sicher?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44266914443264
+    m_Localized: "Sie k\xF6nnen die Statistiken sp\xE4ter nicht wiederherstellen!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45034744705024
+    m_Localized: Ja
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45167880302592
+    m_Localized: Nein
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51172286525440
+    m_Localized: Anzeigen entfernen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 67302732460032
+    m_Localized: Anzeige ansehen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 67464942972928
+    m_Localized: Anzeige
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83057268092928
+    m_Localized: "Nicht genug M\xFCnzen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 82901609082880
+    m_Localized: Du kauftest
+    m_Metadata:
+      m_Items: []
+  - m_Id: 84561081266176
+    m_Localized: "Ausgew\xE4hlt"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 84569968996352
+    m_Localized: "Ausw\xE4hlen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 94282366447616
+    m_Localized: Farben
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96514709254144
+    m_Localized: thema
+    m_Metadata:
+      m_Items: []
+  - m_Id: 99318035247104
+    m_Localized: Pause
+    m_Metadata:
+      m_Items: []
+  - m_Id: 99993536294912
+    m_Localized: "Hauptmen\xFC"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101203458781184
+    m_Localized: Spiel ist aus
+    m_Metadata:
+      m_Items: []
+  - m_Id: 106636143620096
+    m_Localized: Neue Bestnote
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2889774133248
+    m_Localized: Punktzahl
+    m_Metadata:
+      m_Items: []
+  - m_Id: 410529784262656
+    m_Localized: 'Sie haben gekauft:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 411748552536064
+    m_Localized: 'Anzeigen wurden
+
+      entfernt'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 412943614603264
+    m_Localized: Kauf gescheitert
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1171883164037120
+    m_Localized: Ziehe <b>eine</b> der Zahlen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1172538117189632
+    m_Localized: Sammle <b>drei</b> oder mehr Zahlen der <b>gleichen</b> Farbe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1173280848736256
+    m_Localized: Verwenden Sie Hinweise, wenn Sie ratlos sind
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1173717589028864
+    m_Localized: "Macht den letzten Zug r\xFCckg\xE4ngig"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1174314279104512
+    m_Localized: Aktualisiert Nummern
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1174374832271360
+    m_Localized: "Benutze eine Bombe, um benachbarte Zahlen zu zerst\xF6ren"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1174420415967232
+    m_Localized: "Sammle die h\xF6chste Zahl wie m\xF6glich"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1175851885785088
+    m_Localized: Spiel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1175929228750848
+    m_Localized: "N\xE4chste"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1810721850912768
+    m_Localized: Standard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1811435612401664
+    m_Localized: Formen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1811783504752640
+    m_Localized: Verhexen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1812289589473280
+    m_Localized: Entdeckung
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1812553398611968
+    m_Localized: Polygone
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1812900565348352
+    m_Localized: "B\xF6gen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1813147186229248
+    m_Localized: Abstraktion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1813468729962496
+    m_Localized: Geometrisch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1813819931619328
+    m_Localized: Platz
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2188266450579456
+    m_Localized: Ich fordere dich heraus, meinen Rekord {score} in JoiNum zu schlagen
+    m_Metadata:
+      m_Items:
+      - id: 0
+  - m_Id: 2188419714641920
+    m_Localized: "Holen Sie sich die JoiNum-App \xFCber den folgenden Link.\r\nhttp://onelink.to/joinum"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 1
+    00000000:
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 00f035d38f1e000000f0757c37c60700

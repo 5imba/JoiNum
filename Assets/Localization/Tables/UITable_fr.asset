@@ -1,0 +1,254 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: UITable_fr
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: fr
+  m_SharedData: {fileID: 11400000, guid: 91f31c18e9b526248ba7a0e87624d86b, type: 2}
+  m_Metadata:
+    m_Items:
+    - id: 0
+  m_TableData:
+  - m_Id: 17082740736
+    m_Localized: Nouvelle la partie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 510194479104
+    m_Localized: Continuer la partie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33407693615104
+    m_Localized: "Complexit\xE9"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33603072684032
+    m_Localized: '{num} Couleurs'
+    m_Metadata:
+      m_Items:
+      - id: 0
+  - m_Id: 35342567993344
+    m_Localized: "Param\xE8tres"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35376709627904
+    m_Localized: Des sons
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35400252256256
+    m_Localized: Mode
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37689125892096
+    m_Localized: Tous les jeux
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37870466625536
+    m_Localized: 'Meilleur score:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38149882769408
+    m_Localized: "Nombre le plus \xE9lev\xE9:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38502070087680
+    m_Localized: "Total des jeux jou\xE9s:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38830639280128
+    m_Localized: "Parties jou\xE9es:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38958724935680
+    m_Localized: 'La plupart des mouvements:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42680737722368
+    m_Localized: "R\xE9initialiser les statistiques"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43409204441088
+    m_Localized: "Arri\xE8re"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44060005232640
+    m_Localized: "Es-tu s\xFBr?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44266914443264
+    m_Localized: Vous ne pourrez pas restaurer les statistiques plus tard!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45034744705024
+    m_Localized: Oui
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45167880302592
+    m_Localized: Non
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51172286525440
+    m_Localized: Supprimez la pub
+    m_Metadata:
+      m_Items: []
+  - m_Id: 67302732460032
+    m_Localized: Regarder l'annonce
+    m_Metadata:
+      m_Items: []
+  - m_Id: 67464942972928
+    m_Localized: "Publicit\xE9"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83057268092928
+    m_Localized: "Pas assez de pi\xE8ces"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 82901609082880
+    m_Localized: "Tu as achet\xE9"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 84561081266176
+    m_Localized: Choisie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 84569968996352
+    m_Localized: "S\xE9lectionner"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 94282366447616
+    m_Localized: Couleurs
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96514709254144
+    m_Localized: "th\xE8me"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 99318035247104
+    m_Localized: Pause
+    m_Metadata:
+      m_Items: []
+  - m_Id: 99993536294912
+    m_Localized: Menu principal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101203458781184
+    m_Localized: "Jeu termin\xE9"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 106636143620096
+    m_Localized: Nouveau meilleur score
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2889774133248
+    m_Localized: Score
+    m_Metadata:
+      m_Items: []
+  - m_Id: 410529784262656
+    m_Localized: "Tu as achet\xE9:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 411748552536064
+    m_Localized: "Les annonces ont \xE9t\xE9\r\nsupprim\xE9"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 412943614603264
+    m_Localized: "Achat rat\xE9"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1171883164037120
+    m_Localized: Faites glisser <b>l'un</b> des nombres
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1172538117189632
+    m_Localized: "Collectez <b>trois</b> nombres ou plus de la <b>m\xEAme</b> couleur"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1173280848736256
+    m_Localized: "Utilisez des astuces si vous \xEAtes perplexe"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1173717589028864
+    m_Localized: Annule le dernier mouvement
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1174314279104512
+    m_Localized: "Num\xE9ros de mises \xE0 jour"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1174374832271360
+    m_Localized: "Utilisez une bombe pour d\xE9truire les num\xE9ros adjacents"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1174420415967232
+    m_Localized: Collectez le plus grand nombre possible
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1175851885785088
+    m_Localized: Jouer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1175929228750848
+    m_Localized: Suivant
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1810721850912768
+    m_Localized: Standard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1811435612401664
+    m_Localized: Formes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1811783504752640
+    m_Localized: Hex
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1812289589473280
+    m_Localized: "D\xE9couverte"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1812553398611968
+    m_Localized: Polygones
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1812900565348352
+    m_Localized: Arches
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1813147186229248
+    m_Localized: Abstraction
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1813468729962496
+    m_Localized: "G\xE9om\xE9trique"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1813819931619328
+    m_Localized: Espacer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2188266450579456
+    m_Localized: "Je vous mets au d\xE9fi de battre mon meilleur score de {score}
+      dans JoiNum"
+    m_Metadata:
+      m_Items:
+      - id: 0
+  - m_Id: 2188419714641920
+    m_Localized: "T\xE9l\xE9chargez l'application JoiNum \xE0 partir du lien ci-dessous.\r\nhttp://onelink.to/joinum"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 1
+    00000000:
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 00f035d38f1e000000f0757c37c60700

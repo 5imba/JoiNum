@@ -1,0 +1,338 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cc91d97c4fd6cf43b41a5e125fd4832, type: 3}
+  m_Name: ColorSettings
+  m_EditorClassIdentifier: 
+  pointColors:
+  - {r: 0.18039216, g: 0.8, b: 0.44313726, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.23137255, a: 1}
+  - {r: 1, g: 0.59607846, b: 0, a: 1}
+  - {r: 0.9150943, g: 0.36341757, b: 0.30647027, a: 1}
+  - {r: 0.71172863, g: 0.4452207, b: 0.8207547, a: 1}
+  - {r: 1, g: 1, b: 1, a: 0.6}
+  - {r: 0, g: 0, b: 0, a: 1}
+  themes:
+  - backMain:
+      light: {r: 0.8980392, g: 0.8823529, b: 0.8823529, a: 1}
+      dark: {r: 0.1960784, g: 0.1960784, b: 0.1960784, a: 1}
+    backUI:
+      light: {r: 0.6196079, g: 0.6196079, b: 0.6196079, a: 0.5019608}
+      dark: {r: 0.4588235, g: 0.4588235, b: 0.4588235, a: 0.5019608}
+    backUIPopup:
+      light: {r: 0.8980392, g: 0.8980392, b: 0.8980392, a: 0.69803923}
+      dark: {r: 0.1960784, g: 0.1960784, b: 0.1960784, a: 0.9882353}
+    backUIFade:
+      light: {r: 0.509804, g: 0.509804, b: 0.509804, a: 0.5019608}
+      dark: {r: 0, g: 0, b: 0, a: 0.5019608}
+    buttonMain:
+      light: {r: 1, g: 1, b: 1, a: 1}
+      dark: {r: 0.3098039, g: 0.3098039, b: 0.3098039, a: 1}
+    buttonColored:
+      light: {r: 0.4392157, g: 0.6666667, b: 0.95686275, a: 1}
+      dark: {r: 0.4392157, g: 0.6666667, b: 0.95686275, a: 1}
+    fontMain:
+      light: {r: 0.4392157, g: 0.6666667, b: 0.95686275, a: 1}
+      dark: {r: 0.4392157, g: 0.6666667, b: 0.95686275, a: 1}
+    fontAdditional:
+      light: {r: 1, g: 1, b: 1, a: 1}
+      dark: {r: 1, g: 1, b: 1, a: 1}
+    fontContrast:
+      light: {r: 0.30980393, g: 0.30980393, b: 0.30980393, a: 1}
+      dark: {r: 1, g: 1, b: 1, a: 1}
+    mainMenuBackground:
+      light: {fileID: 21300000, guid: 21321b9583da5ff4793d183ae2855278, type: 3}
+      dark: {fileID: 21300000, guid: 21321b9583da5ff4793d183ae2855278, type: 3}
+    gameBackground:
+      light: {fileID: 21300000, guid: 21321b9583da5ff4793d183ae2855278, type: 3}
+      dark: {fileID: 21300000, guid: 21321b9583da5ff4793d183ae2855278, type: 3}
+    price: 0
+    nameLocalizedId: theme-standard
+  - backMain:
+      light: {r: 0.8980392, g: 0.8823529, b: 0.8823529, a: 1}
+      dark: {r: 0.1960784, g: 0.1960784, b: 0.1960784, a: 1}
+    backUI:
+      light: {r: 0.6196079, g: 0.6196079, b: 0.6196079, a: 0.5019608}
+      dark: {r: 0.4588235, g: 0.4588235, b: 0.4588235, a: 0.5019608}
+    backUIPopup:
+      light: {r: 0.8980392, g: 0.8980392, b: 0.8980392, a: 0.69803923}
+      dark: {r: 0.1960784, g: 0.1960784, b: 0.1960784, a: 0.9882353}
+    backUIFade:
+      light: {r: 0.509804, g: 0.509804, b: 0.509804, a: 0.5019608}
+      dark: {r: 0, g: 0, b: 0, a: 0.5019608}
+    buttonMain:
+      light: {r: 1, g: 1, b: 1, a: 1}
+      dark: {r: 0.3098039, g: 0.3098039, b: 0.3098039, a: 1}
+    buttonColored:
+      light: {r: 0.4392157, g: 0.6666667, b: 0.95686275, a: 1}
+      dark: {r: 0.4392157, g: 0.6666667, b: 0.95686275, a: 1}
+    fontMain:
+      light: {r: 0.4392157, g: 0.6666667, b: 0.95686275, a: 1}
+      dark: {r: 0.4392157, g: 0.6666667, b: 0.95686275, a: 1}
+    fontAdditional:
+      light: {r: 1, g: 1, b: 1, a: 1}
+      dark: {r: 1, g: 1, b: 1, a: 1}
+    fontContrast:
+      light: {r: 0.30980393, g: 0.30980393, b: 0.30980393, a: 1}
+      dark: {r: 1, g: 1, b: 1, a: 1}
+    mainMenuBackground:
+      light: {fileID: 21300000, guid: 21321b9583da5ff4793d183ae2855278, type: 3}
+      dark: {fileID: 21300000, guid: 21321b9583da5ff4793d183ae2855278, type: 3}
+    gameBackground:
+      light: {fileID: 21300000, guid: b560dfa9dc60c89459068dbdfcd17036, type: 3}
+      dark: {fileID: 21300000, guid: b560dfa9dc60c89459068dbdfcd17036, type: 3}
+    price: 0
+    nameLocalizedId: theme-shapes
+  - backMain:
+      light: {r: 0.8980392, g: 0.8823529, b: 0.8823529, a: 1}
+      dark: {r: 0.1960784, g: 0.1960784, b: 0.1960784, a: 1}
+    backUI:
+      light: {r: 0.6196079, g: 0.6196079, b: 0.6196079, a: 0.4}
+      dark: {r: 0.4588235, g: 0.4588235, b: 0.4588235, a: 0.4}
+    backUIPopup:
+      light: {r: 0.8980392, g: 0.8980392, b: 0.8980392, a: 0.69803923}
+      dark: {r: 0.1960784, g: 0.1960784, b: 0.1960784, a: 0.9882353}
+    backUIFade:
+      light: {r: 0.509804, g: 0.509804, b: 0.509804, a: 0.5019608}
+      dark: {r: 0, g: 0, b: 0, a: 0.5019608}
+    buttonMain:
+      light: {r: 1, g: 1, b: 1, a: 1}
+      dark: {r: 0.3098039, g: 0.3098039, b: 0.3098039, a: 1}
+    buttonColored:
+      light: {r: 0.4392157, g: 0.6666667, b: 0.95686275, a: 1}
+      dark: {r: 0.4392157, g: 0.6666667, b: 0.95686275, a: 1}
+    fontMain:
+      light: {r: 0.4392157, g: 0.6666667, b: 0.95686275, a: 1}
+      dark: {r: 0.4392157, g: 0.6666667, b: 0.95686275, a: 1}
+    fontAdditional:
+      light: {r: 1, g: 1, b: 1, a: 1}
+      dark: {r: 1, g: 1, b: 1, a: 1}
+    fontContrast:
+      light: {r: 0.30980393, g: 0.30980393, b: 0.30980393, a: 1}
+      dark: {r: 1, g: 1, b: 1, a: 1}
+    mainMenuBackground:
+      light: {fileID: 21300000, guid: 21321b9583da5ff4793d183ae2855278, type: 3}
+      dark: {fileID: 21300000, guid: 21321b9583da5ff4793d183ae2855278, type: 3}
+    gameBackground:
+      light: {fileID: 21300000, guid: 6ae5520d1a277304188513c345d39109, type: 3}
+      dark: {fileID: 21300000, guid: 6ae5520d1a277304188513c345d39109, type: 3}
+    price: 50
+    nameLocalizedId: theme-hex
+  - backMain:
+      light: {r: 0.8980392, g: 0.8823529, b: 0.8823529, a: 1}
+      dark: {r: 0.1960784, g: 0.1960784, b: 0.1960784, a: 1}
+    backUI:
+      light: {r: 0.6196079, g: 0.6196079, b: 0.6196079, a: 0.5019608}
+      dark: {r: 0.4588235, g: 0.4588235, b: 0.4588235, a: 0.5019608}
+    backUIPopup:
+      light: {r: 0.8980392, g: 0.8980392, b: 0.8980392, a: 0.69803923}
+      dark: {r: 0.1960784, g: 0.1960784, b: 0.1960784, a: 0.9882353}
+    backUIFade:
+      light: {r: 0.509804, g: 0.509804, b: 0.509804, a: 0.5019608}
+      dark: {r: 0, g: 0, b: 0, a: 0.5019608}
+    buttonMain:
+      light: {r: 1, g: 1, b: 1, a: 1}
+      dark: {r: 0.3098039, g: 0.3098039, b: 0.3098039, a: 1}
+    buttonColored:
+      light: {r: 0.4392157, g: 0.6666667, b: 0.95686275, a: 1}
+      dark: {r: 0.4392157, g: 0.6666667, b: 0.95686275, a: 1}
+    fontMain:
+      light: {r: 0.4392157, g: 0.6666667, b: 0.95686275, a: 1}
+      dark: {r: 0.4392157, g: 0.6666667, b: 0.95686275, a: 1}
+    fontAdditional:
+      light: {r: 1, g: 1, b: 1, a: 1}
+      dark: {r: 1, g: 1, b: 1, a: 1}
+    fontContrast:
+      light: {r: 0.30980393, g: 0.30980393, b: 0.30980393, a: 1}
+      dark: {r: 1, g: 1, b: 1, a: 1}
+    mainMenuBackground:
+      light: {fileID: 21300000, guid: 21321b9583da5ff4793d183ae2855278, type: 3}
+      dark: {fileID: 21300000, guid: 21321b9583da5ff4793d183ae2855278, type: 3}
+    gameBackground:
+      light: {fileID: 21300000, guid: d0cc1c6935b424c41a001dd43e5fc969, type: 3}
+      dark: {fileID: 21300000, guid: d0cc1c6935b424c41a001dd43e5fc969, type: 3}
+    price: 175
+    nameLocalizedId: theme-discovery
+  - backMain:
+      light: {r: 0.8980392, g: 0.8823529, b: 0.8823529, a: 1}
+      dark: {r: 0.1960784, g: 0.1960784, b: 0.1960784, a: 1}
+    backUI:
+      light: {r: 0.6196079, g: 0.6196079, b: 0.6196079, a: 0.5019608}
+      dark: {r: 0.4588235, g: 0.4588235, b: 0.4588235, a: 0.5019608}
+    backUIPopup:
+      light: {r: 0.8980392, g: 0.8980392, b: 0.8980392, a: 0.69803923}
+      dark: {r: 0.1960784, g: 0.1960784, b: 0.1960784, a: 0.9882353}
+    backUIFade:
+      light: {r: 0.509804, g: 0.509804, b: 0.509804, a: 0.5019608}
+      dark: {r: 0, g: 0, b: 0, a: 0.5019608}
+    buttonMain:
+      light: {r: 1, g: 1, b: 1, a: 1}
+      dark: {r: 0.3098039, g: 0.3098039, b: 0.3098039, a: 1}
+    buttonColored:
+      light: {r: 0.4392157, g: 0.6666667, b: 0.95686275, a: 1}
+      dark: {r: 0.4392157, g: 0.6666667, b: 0.95686275, a: 1}
+    fontMain:
+      light: {r: 0.4392157, g: 0.6666667, b: 0.95686275, a: 1}
+      dark: {r: 0.4392157, g: 0.6666667, b: 0.95686275, a: 1}
+    fontAdditional:
+      light: {r: 1, g: 1, b: 1, a: 1}
+      dark: {r: 1, g: 1, b: 1, a: 1}
+    fontContrast:
+      light: {r: 0.30980393, g: 0.30980393, b: 0.30980393, a: 1}
+      dark: {r: 1, g: 1, b: 1, a: 1}
+    mainMenuBackground:
+      light: {fileID: 21300000, guid: 21321b9583da5ff4793d183ae2855278, type: 3}
+      dark: {fileID: 21300000, guid: 21321b9583da5ff4793d183ae2855278, type: 3}
+    gameBackground:
+      light: {fileID: 21300000, guid: ad1b79c70d255d444a9836f714253760, type: 3}
+      dark: {fileID: 21300000, guid: 5408fd00a22270947bdf9aac8a701355, type: 3}
+    price: 250
+    nameLocalizedId: theme-polygons
+  - backMain:
+      light: {r: 0.8980392, g: 0.8823529, b: 0.8823529, a: 1}
+      dark: {r: 0.1960784, g: 0.1960784, b: 0.1960784, a: 1}
+    backUI:
+      light: {r: 0.6196079, g: 0.6196079, b: 0.6196079, a: 0.5019608}
+      dark: {r: 0.4588235, g: 0.4588235, b: 0.4588235, a: 0.5019608}
+    backUIPopup:
+      light: {r: 0.8980392, g: 0.8980392, b: 0.8980392, a: 0.69803923}
+      dark: {r: 0.1960784, g: 0.1960784, b: 0.1960784, a: 0.9882353}
+    backUIFade:
+      light: {r: 0.509804, g: 0.509804, b: 0.509804, a: 0.5019608}
+      dark: {r: 0, g: 0, b: 0, a: 0.5019608}
+    buttonMain:
+      light: {r: 1, g: 1, b: 1, a: 1}
+      dark: {r: 0.3098039, g: 0.3098039, b: 0.3098039, a: 1}
+    buttonColored:
+      light: {r: 0.4392157, g: 0.6666667, b: 0.95686275, a: 1}
+      dark: {r: 0.4392157, g: 0.6666667, b: 0.95686275, a: 1}
+    fontMain:
+      light: {r: 0.4392157, g: 0.6666667, b: 0.95686275, a: 1}
+      dark: {r: 0.4392157, g: 0.6666667, b: 0.95686275, a: 1}
+    fontAdditional:
+      light: {r: 1, g: 1, b: 1, a: 1}
+      dark: {r: 1, g: 1, b: 1, a: 1}
+    fontContrast:
+      light: {r: 0.30980393, g: 0.30980393, b: 0.30980393, a: 1}
+      dark: {r: 1, g: 1, b: 1, a: 1}
+    mainMenuBackground:
+      light: {fileID: 21300000, guid: 21321b9583da5ff4793d183ae2855278, type: 3}
+      dark: {fileID: 21300000, guid: 21321b9583da5ff4793d183ae2855278, type: 3}
+    gameBackground:
+      light: {fileID: 21300000, guid: 93d377b66fe51954293033efee8266f5, type: 3}
+      dark: {fileID: 21300000, guid: b2d7df92a9e13304ea0a1cf66ee4b1d4, type: 3}
+    price: 255
+    nameLocalizedId: theme-arches
+  - backMain:
+      light: {r: 0.8980392, g: 0.8823529, b: 0.8823529, a: 1}
+      dark: {r: 0.1960784, g: 0.1960784, b: 0.1960784, a: 1}
+    backUI:
+      light: {r: 0.6196079, g: 0.6196079, b: 0.6196079, a: 0.5019608}
+      dark: {r: 0.4588235, g: 0.4588235, b: 0.4588235, a: 0.5019608}
+    backUIPopup:
+      light: {r: 0.8980392, g: 0.8980392, b: 0.8980392, a: 0.69803923}
+      dark: {r: 0.1960784, g: 0.1960784, b: 0.1960784, a: 0.9882353}
+    backUIFade:
+      light: {r: 0.509804, g: 0.509804, b: 0.509804, a: 0.5019608}
+      dark: {r: 0, g: 0, b: 0, a: 0.5019608}
+    buttonMain:
+      light: {r: 1, g: 1, b: 1, a: 1}
+      dark: {r: 0.3098039, g: 0.3098039, b: 0.3098039, a: 1}
+    buttonColored:
+      light: {r: 0.4392157, g: 0.6666667, b: 0.95686275, a: 1}
+      dark: {r: 0.4392157, g: 0.6666667, b: 0.95686275, a: 1}
+    fontMain:
+      light: {r: 0.4392157, g: 0.6666667, b: 0.95686275, a: 1}
+      dark: {r: 0.4392157, g: 0.6666667, b: 0.95686275, a: 1}
+    fontAdditional:
+      light: {r: 1, g: 1, b: 1, a: 1}
+      dark: {r: 1, g: 1, b: 1, a: 1}
+    fontContrast:
+      light: {r: 0.30980393, g: 0.30980393, b: 0.30980393, a: 1}
+      dark: {r: 1, g: 1, b: 1, a: 1}
+    mainMenuBackground:
+      light: {fileID: 21300000, guid: 21321b9583da5ff4793d183ae2855278, type: 3}
+      dark: {fileID: 21300000, guid: 21321b9583da5ff4793d183ae2855278, type: 3}
+    gameBackground:
+      light: {fileID: 21300000, guid: f0724d078cfe97d43ae0634dff339a01, type: 3}
+      dark: {fileID: 21300000, guid: 68e3973671b6074488adb22cc2127679, type: 3}
+    price: 325
+    nameLocalizedId: theme-abstract
+  - backMain:
+      light: {r: 0.8980392, g: 0.8823529, b: 0.8823529, a: 1}
+      dark: {r: 0.1960784, g: 0.1960784, b: 0.1960784, a: 1}
+    backUI:
+      light: {r: 0.6196079, g: 0.6196079, b: 0.6196079, a: 0.5019608}
+      dark: {r: 0.4588235, g: 0.4588235, b: 0.4588235, a: 0.5019608}
+    backUIPopup:
+      light: {r: 0.8980392, g: 0.8980392, b: 0.8980392, a: 0.69803923}
+      dark: {r: 0.1960784, g: 0.1960784, b: 0.1960784, a: 0.9882353}
+    backUIFade:
+      light: {r: 0.509804, g: 0.509804, b: 0.509804, a: 0.5019608}
+      dark: {r: 0, g: 0, b: 0, a: 0.5019608}
+    buttonMain:
+      light: {r: 1, g: 1, b: 1, a: 1}
+      dark: {r: 0.3098039, g: 0.3098039, b: 0.3098039, a: 1}
+    buttonColored:
+      light: {r: 0.4392157, g: 0.6666667, b: 0.95686275, a: 1}
+      dark: {r: 0.4392157, g: 0.6666667, b: 0.95686275, a: 1}
+    fontMain:
+      light: {r: 0.4392157, g: 0.6666667, b: 0.95686275, a: 1}
+      dark: {r: 0.4392157, g: 0.6666667, b: 0.95686275, a: 1}
+    fontAdditional:
+      light: {r: 1, g: 1, b: 1, a: 1}
+      dark: {r: 1, g: 1, b: 1, a: 1}
+    fontContrast:
+      light: {r: 0.30980393, g: 0.30980393, b: 0.30980393, a: 1}
+      dark: {r: 1, g: 1, b: 1, a: 1}
+    mainMenuBackground:
+      light: {fileID: 21300000, guid: 21321b9583da5ff4793d183ae2855278, type: 3}
+      dark: {fileID: 21300000, guid: 21321b9583da5ff4793d183ae2855278, type: 3}
+    gameBackground:
+      light: {fileID: 21300000, guid: 62f575bc8fcbcef4baefcb0c274ca0b7, type: 3}
+      dark: {fileID: 21300000, guid: 2bb45caf5e5a3634bbc8e61c62f31301, type: 3}
+    price: 360
+    nameLocalizedId: theme-geometric
+  - backMain:
+      light: {r: 0.8980392, g: 0.8823529, b: 0.8823529, a: 1}
+      dark: {r: 0.1960784, g: 0.1960784, b: 0.1960784, a: 1}
+    backUI:
+      light: {r: 0.6196079, g: 0.6196079, b: 0.6196079, a: 0.5019608}
+      dark: {r: 0.4588235, g: 0.4588235, b: 0.4588235, a: 0.5019608}
+    backUIPopup:
+      light: {r: 0.8980392, g: 0.8980392, b: 0.8980392, a: 0.69803923}
+      dark: {r: 0.1960784, g: 0.1960784, b: 0.1960784, a: 0.9882353}
+    backUIFade:
+      light: {r: 0.509804, g: 0.509804, b: 0.509804, a: 0.5019608}
+      dark: {r: 0, g: 0, b: 0, a: 0.5019608}
+    buttonMain:
+      light: {r: 1, g: 1, b: 1, a: 1}
+      dark: {r: 0.3098039, g: 0.3098039, b: 0.3098039, a: 1}
+    buttonColored:
+      light: {r: 0.4392157, g: 0.6666667, b: 0.95686275, a: 1}
+      dark: {r: 0.4392157, g: 0.6666667, b: 0.95686275, a: 1}
+    fontMain:
+      light: {r: 0.4392157, g: 0.6666667, b: 0.95686275, a: 1}
+      dark: {r: 0.4392157, g: 0.6666667, b: 0.95686275, a: 1}
+    fontAdditional:
+      light: {r: 1, g: 1, b: 1, a: 1}
+      dark: {r: 1, g: 1, b: 1, a: 1}
+    fontContrast:
+      light: {r: 0.30980393, g: 0.30980393, b: 0.30980393, a: 1}
+      dark: {r: 1, g: 1, b: 1, a: 1}
+    mainMenuBackground:
+      light: {fileID: 21300000, guid: 21321b9583da5ff4793d183ae2855278, type: 3}
+      dark: {fileID: 21300000, guid: 21321b9583da5ff4793d183ae2855278, type: 3}
+    gameBackground:
+      light: {fileID: 21300000, guid: 1de2c4bfe4308bf458f5b004ff9b3a01, type: 3}
+      dark: {fileID: 21300000, guid: 1a43040218acf014fac896fcb612510f, type: 3}
+    price: 1200
+    nameLocalizedId: theme-space

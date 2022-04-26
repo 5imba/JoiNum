@@ -1,0 +1,1 @@
+public enum UITag { BackMain, BackUI, BackUIPopup, BackUIFade, ButtonMain, ButtonColored, FontMain, FornAdditional, MainMenuBackground, GameBackground }
