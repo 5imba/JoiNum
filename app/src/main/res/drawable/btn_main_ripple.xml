@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="?attr/colorControlHighlight">
+    <item android:id="@android:id/mask">
+        <inset
+            android:insetLeft="@dimen/btn_inset"
+            android:insetTop="@dimen/btn_inset"
+            android:insetRight="@dimen/btn_inset"
+            android:insetBottom="@dimen/btn_inset">
+            <shape android:shape="rectangle">
+                <solid android:color="@color/white" />
+                <corners android:radius="@dimen/btn_corner_radius" />
+            </shape>
+        </inset>
+    </item>
+    <item>
+        <inset
+            android:insetLeft="@dimen/btn_inset"
+            android:insetTop="@dimen/btn_inset"
+            android:insetRight="@dimen/btn_inset"
+            android:insetBottom="@dimen/btn_inset">
+            <shape android:shape="rectangle">
+                <solid android:color="@color/white" />
+                <corners android:radius="@dimen/btn_corner_radius" />
+            </shape>
+        </inset>
+    </item>
+</ripple>

@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".screens.game.GameFragment">
+
+    <ImageView
+        android:id="@+id/img_background"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_default_background"
+        tools:ignore="ContentDescription,ImageContrastCheck" />
+
+    <FrameLayout
+        android:id="@+id/container_game"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/btn_inset"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/img_score_background"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/score"
+                    android:src="@drawable/shape_rounded_rect"
+                    app:tint="?attr/colorPrimary"
+                    tools:ignore="ImageContrastCheck" />
+
+                <TextView
+                    android:id="@+id/txt_score"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="@dimen/dlg_margin_inner"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="15dp"
+                    android:textColor="?attr/colorSecondary" />
+            </FrameLayout>
+
+
+            <ImageButton
+                android:id="@+id/btn_pause"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:background="@drawable/btn_main_ripple"
+                android:backgroundTint="?attr/colorPrimary"
+                android:contentDescription="@string/pause"
+                android:padding="13dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_pause"
+                app:tint="?attr/colorSecondary"
+                tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
+        </LinearLayout>
+
+        <com.bogleo.joinum.common.game.GameView
+            android:id="@+id/game_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:backgroundTint="@android:color/transparent"
+            android:paddingStart="30dp"
+            android:paddingTop="100dp"
+            android:paddingEnd="30dp"
+            android:paddingBottom="50dp"
+            app:fieldsTint="?attr/colorPrimary" />
+
+    </FrameLayout>
+
+    <RelativeLayout
+        android:id="@+id/container_pause"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/layout_container_pause"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="@dimen/dlg_margin_outside"
+            android:background="@drawable/shape_rounded_rect"
+            android:backgroundTint="?attr/colorPrimaryVariant"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txt_pause_label"
+                style="@style/TextAppearance.HeaderText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dlg_margin_horizontal"
+                android:layout_marginTop="@dimen/dlg_margin_top"
+                android:layout_marginBottom="@dimen/dlg_margin_inner"
+                android:gravity="center"
+                android:text="@string/pause" />
+
+            <Button
+                android:id="@+id/btn_resume_game"
+                style="@style/MainButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dlg_margin_horizontal"
+                android:layout_marginVertical="@dimen/dlg_margin_inner"
+                android:text="@string/resume" />
+
+            <Button
+                android:id="@+id/btn_new_game_game"
+                style="@style/MainButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dlg_margin_horizontal"
+                android:layout_marginVertical="@dimen/dlg_margin_inner"
+                android:text="@string/new_game" />
+
+            <Button
+                android:id="@+id/btn_main_menu_game"
+                style="@style/MainButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dlg_margin_horizontal"
+                android:layout_marginTop="@dimen/dlg_margin_inner"
+                android:layout_marginBottom="@dimen/dlg_margin_bottom"
+                android:text="@string/main_menu"
+                tools:ignore="TextContrastCheck" />
+
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/btn_close_pause"
+            android:layout_width="@dimen/dlg_btn_size"
+            android:layout_height="@dimen/dlg_btn_size"
+            android:layout_alignTop="@+id/layout_container_pause"
+            android:layout_alignEnd="@+id/layout_container_pause"
+            android:layout_marginTop="@dimen/dlg_margin_inner"
+            android:layout_marginEnd="@dimen/dlg_margin_inner"
+            android:background="@drawable/btn_circle_ripple"
+            android:contentDescription="@string/close_pause_menu"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_cross"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/gray_800"
+            tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/container_game_over"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="@dimen/dlg_margin_outside"
+        android:background="@drawable/shape_rounded_rect"
+        android:backgroundTint="?attr/colorPrimaryVariant"
+        android:elevation="5dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/txt_game_over_label"
+            style="@style/TextAppearance.HeaderText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dlg_margin_horizontal"
+            android:layout_marginTop="@dimen/dlg_margin_top"
+            android:layout_marginBottom="@dimen/dlg_margin_inner"
+            android:gravity="center"
+            android:text="@string/game_over" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dlg_margin_horizontal_inset"
+            android:layout_marginVertical="@dimen/dlg_margin_inner_inset"
+            android:background="@drawable/shape_round_rect_stroke"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txt_score_game_over"
+                style="@style/TextAppearance.HeaderText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dlg_margin_inner"
+                android:layout_marginVertical="@dimen/dlg_margin_inner"
+                android:autoSizeMaxTextSize="@dimen/txt_main_size"
+                android:autoSizeTextType="uniform"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/txt_best_score_game_over"
+                style="@style/TextAppearance.HeaderText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dlg_margin_inner"
+                android:layout_marginVertical="@dimen/dlg_margin_inner"
+                android:autoSizeMaxTextSize="@dimen/txt_main_size"
+                android:autoSizeTextType="uniform"
+                android:gravity="center"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/btn_new_game_game_over"
+            style="@style/MainButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dlg_margin_horizontal"
+            android:layout_marginVertical="@dimen/dlg_margin_inner"
+            android:text="@string/new_game"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <Button
+            android:id="@+id/btn_main_menu_game_over"
+            style="@style/MainButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dlg_margin_horizontal"
+            android:layout_marginTop="@dimen/dlg_margin_inner"
+            android:layout_marginBottom="@dimen/dlg_margin_bottom"
+            android:text="@string/main_menu"
+            tools:ignore="TextContrastCheck,TouchTargetSizeCheck" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/container_difficulty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/layout_difficulty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="@dimen/dlg_margin_outside"
+            android:background="@drawable/shape_rounded_rect"
+            android:backgroundTint="?attr/colorPrimaryVariant"
+            android:elevation="5dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView"
+                style="@style/TextAppearance.HeaderText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dlg_margin_horizontal"
+                android:layout_marginTop="@dimen/dlg_margin_top"
+                android:layout_marginBottom="@dimen/dlg_margin_inner"
+                android:gravity="center"
+                android:text="@string/difficulty" />
+
+            <Button
+                android:id="@+id/btn_easy"
+                style="@style/MainButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dlg_margin_horizontal"
+                android:layout_marginVertical="@dimen/dlg_margin_inner"
+                android:backgroundTint="?attr/colorPrimaryVariant"
+                android:text="@string/easy" />
+
+            <Button
+                android:id="@+id/btn_normal"
+                style="@style/MainButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dlg_margin_horizontal"
+                android:layout_marginVertical="@dimen/dlg_margin_inner"
+                android:backgroundTint="?attr/colorPrimaryVariant"
+                android:text="@string/normal" />
+
+            <Button
+                android:id="@+id/btn_hard"
+                style="@style/MainButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dlg_margin_horizontal"
+                android:layout_marginTop="@dimen/dlg_margin_inner"
+                android:layout_marginBottom="@dimen/dlg_margin_bottom"
+                android:backgroundTint="?attr/colorPrimaryVariant"
+                android:text="@string/hard" />
+
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/btn_close_difficulty"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignTop="@+id/layout_difficulty"
+            android:layout_alignEnd="@+id/layout_difficulty"
+            android:layout_marginTop="@dimen/dlg_margin_inner"
+            android:layout_marginEnd="@dimen/dlg_margin_inner"
+            android:background="@drawable/btn_circle_ripple"
+            android:contentDescription="@string/close_pause_menu"
+            android:elevation="5dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_cross"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/gray_800"
+            tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
+
+    </RelativeLayout>
+
+</FrameLayout>

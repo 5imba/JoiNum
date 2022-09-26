@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">JoiNum</string>
+    <string name="prefs_group">JoiNumPrefs</string>
+
+    <string name="game_data">game_data</string>
+    <string name="new_game">New Game</string>
+    <string name="resume">Resume</string>
+
+    <string name="score_label">Score:</string>
+    <string name="score">Score</string>
+    <string name="pause">Pause</string>
+    <string name="main_menu">Main Menu</string>
+    <string name="restart">Restart</string>
+    <string name="close_pause_menu">Close Pause Menu</string>
+    <string name="easy">Easy</string>
+    <string name="normal">Normal</string>
+    <string name="hard">Hard</string>
+    <string name="difficulty">Difficulty</string>
+    <string name="game_over">Game Over</string>
+
+    <string name="game_over_score">Your Score:</string>
+    <string name="game_over_best_score">Best Score:</string>
+    <string name="logo_left" ><b><big>J</big><small>OI</small></b></string>
+    <string name="logo_right"><b><big>N</big><small>UM</small></b></string>
+</resources>
