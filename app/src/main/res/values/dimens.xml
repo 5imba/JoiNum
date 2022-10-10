@@ -3,6 +3,9 @@
     <dimen name="btn_corner_radius">10dp</dimen>
     <dimen name="btn_inset">4dp</dimen>
     <dimen name="btn_height">45dp</dimen>
+    <dimen name="btn_height_padded">35dp</dimen>
+
+    <dimen name="img_btn_size">40dp</dimen>
 
     <dimen name="dlg_margin_top">15dp</dimen>
     <dimen name="dlg_margin_inner">5dp</dimen>
@@ -10,11 +13,12 @@
     <dimen name="dlg_margin_horizontal">35dp</dimen>
     <dimen name="dlg_margin_outside">50dp</dimen>
     <dimen name="dlg_btn_size">25dp</dimen>
+    <dimen name="dlg_margin_inner_inset">9dp</dimen>
+    <dimen name="dlg_margin_horizontal_inset">39dp</dimen>
+    <dimen name="dlg_margin_start">15dp</dimen>
 
     <dimen name="txt_main_size">16sp</dimen>
     <dimen name="txt_header_size">20sp</dimen>
 
-    <dimen name="dlg_margin_inner_inset">9dp</dimen>
-    <dimen name="dlg_margin_horizontal_inset">39dp</dimen>
 
 </resources>

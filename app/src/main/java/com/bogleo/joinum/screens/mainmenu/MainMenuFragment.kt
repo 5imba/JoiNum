@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import com.bogleo.joinum.common.game.data.GameMode
+import com.bogleo.joinum.common.utils.sound.SoundItem
 import com.bogleo.joinum.databinding.FragmentMainMenuBinding
 import com.bogleo.joinum.screens.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -28,7 +29,7 @@ class MainMenuFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         _binding = FragmentMainMenuBinding.inflate(inflater, container, false)
-        return binding.root
+        return _binding?.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -45,25 +46,50 @@ class MainMenuFragment : Fragment() {
             // Show difficulty popup
             btnNewGame.setOnClickListener {
                 viewModel.dialogManager.showDialog(
-                    dialog = containerDifficulty,
+                    dialog = difficultyPopup.layoutDifficulty,
                     mainLayer = containerMain
                 )
             }
-            // Close difficulty popup
-            btnCloseDifficulty.setOnClickListener {
-                viewModel.dialogManager.closeLastDialog(
+            with(difficultyPopup) {
+                // Close difficulty popup
+                btnCloseDifficulty.setOnClickListener {
+                    viewModel.dialogManager.closeLastDialog(
+                        mainLayer = containerMain
+                    )
+                }
+                // Start New Game with selected difficulty
+                btnEasy.setOnClickListener {
+                    mainViewModel.openNewGame(GameMode.fromDifficulty(difficulty = 3))
+                }
+                btnNormal.setOnClickListener {
+                    mainViewModel.openNewGame(GameMode.fromDifficulty(difficulty = 4))
+                }
+                btnHard.setOnClickListener {
+                    mainViewModel.openNewGame(GameMode.fromDifficulty(difficulty = 5))
+                }
+            }
+            // Show settings popup
+            imgBtnSettings.setOnClickListener {
+                viewModel.dialogManager.showDialog(
+                    dialog = settingsPopup.layoutSettings,
                     mainLayer = containerMain
                 )
             }
-            // Start New Game with selected difficulty
-            btnEasy.setOnClickListener {
-                mainViewModel.openNewGame(GameMode.fromDifficulty(difficulty = 3))
-            }
-            btnNormal.setOnClickListener {
-                mainViewModel.openNewGame(GameMode.fromDifficulty(difficulty = 4))
-            }
-            btnHard.setOnClickListener {
-                mainViewModel.openNewGame(GameMode.fromDifficulty(difficulty = 5))
+            with(settingsPopup) {
+                // Sounds switcher
+                with(switchSounds) {
+                    isChecked = mainViewModel.sharedPrefs.allowSound
+                    setOnCheckedChangeListener { _, isChecked ->
+                        mainViewModel.toggleSounds(allowSounds = isChecked)
+                    }
+                }
+                // Close settings popup
+                btnCloseSettings.setOnClickListener {
+                    viewModel.dialogManager.closeLastDialog(
+                        mainLayer = containerMain
+                    )
+                }
+                viewModel.spinnerHelper.setup(spinner = spinnerThemeMode)
             }
         }
         // Add onBackPressed callback

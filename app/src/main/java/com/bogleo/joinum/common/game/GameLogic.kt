@@ -9,12 +9,17 @@ import com.bogleo.joinum.common.game.data.GameData
 import com.bogleo.joinum.common.game.data.GameMode
 import com.bogleo.joinum.common.game.models.PointCell
 import com.bogleo.joinum.common.game.models.isHovered
+import com.bogleo.joinum.common.utils.sound.SoundItem
+import com.bogleo.joinum.common.utils.sound.SoundManager
 import javax.inject.Inject
 import javax.inject.Singleton
 import kotlin.random.Random
 
 @Singleton
-class GameLogic @Inject constructor() {
+class GameLogic @Inject constructor(
+    private val soundManager: SoundManager
+) {
+
     private lateinit var gameView: GameView
     private lateinit var gameData: GameData
 
@@ -127,6 +132,8 @@ class GameLogic @Inject constructor() {
                                 saveGame()
                             }
                         }
+                        // Play sound
+                        soundManager.play(SoundItem.SetPoint())
                     }
                 }
             }
@@ -197,6 +204,8 @@ class GameLogic @Inject constructor() {
                     pc.startScale(PointCell.SCALE_SMALL) { gameView.redraw() }
                 }
             }
+            // Play sound
+            soundManager.play(SoundItem.Combine())
         } else {
             // Search is finish, reinit values
             allowInput = true

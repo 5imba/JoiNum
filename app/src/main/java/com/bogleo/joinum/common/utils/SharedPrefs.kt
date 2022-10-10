@@ -21,6 +21,14 @@ class SharedPrefs @Inject constructor(
         Context.MODE_PRIVATE
     )
 
+    companion object {
+        private const val GAME_DATA = "GAME_DATA"
+        private const val GAME_MODE = "GAME_MODE"
+        private const val BEST_SCORE = "BEST_SCORE"
+        private const val THEME_MODE = "THEME_MODE"
+        private const val ALLOW_SOUND = "ALLOW_SOUND"
+    }
+
     var gameMode: GameMode
         get() {
             val json = prefs.getString(GAME_MODE, "")
@@ -42,9 +50,13 @@ class SharedPrefs @Inject constructor(
         get() = prefs.getInt(BEST_SCORE, 0)
         set(value) = prefs.edit().putInt(BEST_SCORE, value).apply()
 
+    var themeMode: Int
+        get() = prefs.getInt(THEME_MODE, 0)
+        set(value) = prefs.edit().putInt(THEME_MODE, value).apply()
+
+    var allowSound: Boolean
+        get() = prefs.getBoolean(ALLOW_SOUND, true)
+        set(value) = prefs.edit().putBoolean(ALLOW_SOUND, value).apply()
+
     fun clearPrefs() = prefs.edit().clear().apply()
 }
-
-private const val GAME_DATA = "GAME_DATA"
-private const val GAME_MODE = "GAME_MODE"
-private const val BEST_SCORE = "BEST_SCORE"

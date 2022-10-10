@@ -9,7 +9,7 @@
         <item name="colorSecondary">@color/blue</item>
         <item name="colorSecondaryVariant">@color/white</item>
         <item name="colorOnSecondary">@color/black</item>
-        <!-- Status bar -->
+        <!-- Status bar. -->
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowActionBar">false</item>
@@ -19,11 +19,10 @@
         <item name="android:statusBarColor">@android:color/transparent</item>
 
         <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
-        <!-- Customize your theme here. -->
     </style>
 
     <style name="TextAppearance.MainText" parent="TextAppearance.AppCompat">
-        <item name="fontFamily">@font/montserrat_medium</item>
+        <item name="fontFamily">@font/montserrat_semibold</item>
         <item name="android:textColor">@color/blue</item>
     </style>
 
@@ -32,9 +31,18 @@
     </style>
 
     <style name="TextAppearance.LogoText" parent="TextAppearance.MainText">
+        <item name="fontFamily">@font/montserrat_bold</item>
         <item name="android:shadowColor">#40000000</item>
         <item name="android:shadowRadius">10</item>
         <item name="android:textSize">60sp</item>
+    </style>
+
+    <style name="TextAppearance.HighlightedText" parent="TextAppearance.MainText">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TextAppearance.HighlightedInverse" parent="TextAppearance.MainText">
+        <item name="android:textColor">?attr/colorOnSecondary</item>
     </style>
 
     <style name="MainButton" parent="Widget.MaterialComponents.Button">
@@ -45,13 +53,33 @@
         <item name="android:background">@drawable/btn_main_ripple</item>
     </style>
 
-    <style name="TextAppearance.HighlightedText" parent="TextAppearance.MainText">
-        <item name="android:textColor">@color/white</item>
-    </style>
-
     <style name="HighlightedButton" parent="MainButton">
         <item name="android:textAppearance">@style/TextAppearance.HighlightedText</item>
         <item name="backgroundTint">@color/blue</item>
+    </style>
+
+    <style name="ImageButton.Main" parent="Widget.AppCompat.ImageButton">
+        <item name="android:background">?android:attr/selectableItemBackgroundBorderless</item>
+        <item name="android:scaleType">centerInside</item>
+        <item name="android:layout_margin">@dimen/dlg_margin_inner</item>
+    </style>
+    
+    <style name="ImageButton.Close" parent="ImageButton.Main">
+        <item name="android:background">@drawable/btn_circle_ripple</item>
+        <item name="tint">@color/gray_800</item>
+        <item name="android:elevation">5dp</item>
+    </style>
+
+    <style name="Switch" parent="@android:style/Widget.Material.Light.CompoundButton.Switch">
+        <item name="android:textAppearance">@style/TextAppearance.MainText</item>
+        <item name="android:textColor">?attr/colorSecondary</item>
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+    </style>
+
+    <style name="Spinner.DropDown" parent="Widget.AppCompat.Spinner.DropDown">
+        <item name="android:dropDownWidth">match_parent</item>
+        <item name="android:background">@drawable/shape_spinner_rounded</item>
+        <item name="android:popupBackground">@drawable/shape_spinner_rounded</item>
     </style>
 
 </resources>

@@ -22,10 +22,12 @@ import javax.inject.Inject
 class GameFragment : Fragment() {
 
     @Inject
-    lateinit var gameLogic: GameLogic
+    @JvmField
+    var gameLogic: GameLogic? = null
 
     @Inject
-    lateinit var gameData: GameData
+    @JvmField
+    var gameData: GameData? = null
 
     private var _binding: FragmentGameBinding? = null
     private val binding get() = _binding!!
@@ -47,29 +49,31 @@ class GameFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         with(binding) {
-            // Initialize Game Logic (Main Game Enter Point)
-            gameLogic.init(gameView = gameView, gameData = gameData)
-
-            // Score in game
-            gameLogic.score.observe(viewLifecycleOwner) { scoreText: String ->
-                txtScore.text = scoreText
-            }
-
-            // Game Over
-            val scorePrefix = requireContext().getString(R.string.game_over_score)
-            val bestScorePrefix = requireContext().getString(R.string.game_over_best_score)
-            gameLogic.setOnGameOverListener { score, bestScore ->
-                txtScoreGameOver.text = "$scorePrefix $score"
-                if(bestScore > 0) {
-                    txtBestScoreGameOver.visibility = View.VISIBLE
-                    txtBestScoreGameOver.text = "$bestScorePrefix $bestScore"
+            gameLogic?.let { gLogic: GameLogic ->
+                gameData?.let { gdata: GameData ->
+                    // Initialize Game Logic (Main Game Enter Point)
+                    gLogic.init(gameView = gameView, gameData = gdata)
                 }
-                viewModel.dialogManager.clearAllAndShowDialog(
-                    dialog = containerGameOver,
-                    mainLayer = containerGame,
-                    hideable = false
-                ) {
-                    binding.gameView.isPaused = true
+                // Score in game
+                gLogic.score.observe(viewLifecycleOwner) { scoreText: String ->
+                    txtScore.text = scoreText
+                }
+                // Game Over
+                val scorePrefix = requireContext().getString(R.string.game_over_score)
+                val bestScorePrefix = requireContext().getString(R.string.game_over_best_score)
+                gLogic.setOnGameOverListener { score, bestScore ->
+                    txtScoreGameOver.text = "$scorePrefix $score"
+                    if(bestScore > 0) {
+                        txtBestScoreGameOver.visibility = View.VISIBLE
+                        txtBestScoreGameOver.text = "$bestScorePrefix $bestScore"
+                    }
+                    viewModel.dialogManager.clearAllAndShowDialog(
+                        dialog = containerGameOver,
+                        mainLayer = containerGame,
+                        hideable = false
+                    ) {
+                        binding.gameView.isPaused = true
+                    }
                 }
             }
 
@@ -77,24 +81,26 @@ class GameFragment : Fragment() {
             btnPause.setOnClickListener { showDialog(containerPause) }
             btnClosePause.setOnClickListener { closeCurrentDialog() }
             btnResumeGame.setOnClickListener { closeCurrentDialog() }
-            btnNewGameGame.setOnClickListener { showDialog(containerDifficulty) }
+            btnNewGameGame.setOnClickListener { showDialog(difficultyPopup.layoutDifficulty) }
             btnMainMenuGame.setOnClickListener { mainViewModel.openMainMenu() }
 
             // Bind GameOver dialog buttons
-            btnNewGameGameOver.setOnClickListener { showDialog(containerDifficulty) }
+            btnNewGameGameOver.setOnClickListener { showDialog(difficultyPopup.layoutDifficulty) }
             btnMainMenuGameOver.setOnClickListener { mainViewModel.openMainMenu() }
 
-            // Bind Difficulty dialog buttons
-            btnCloseDifficulty.setOnClickListener { closeCurrentDialog() }
-            // Start New Game with selected difficulty
-            btnEasy.setOnClickListener {
-                mainViewModel.openNewGame(GameMode.fromDifficulty(difficulty = 3))
-            }
-            btnNormal.setOnClickListener {
-                mainViewModel.openNewGame(GameMode.fromDifficulty(difficulty = 4))
-            }
-            btnHard.setOnClickListener {
-                mainViewModel.openNewGame(GameMode.fromDifficulty(difficulty = 5))
+            with(difficultyPopup) {
+                // Bind Difficulty dialog buttons
+                btnCloseDifficulty.setOnClickListener { closeCurrentDialog() }
+                // Start New Game with selected difficulty
+                btnEasy.setOnClickListener {
+                    mainViewModel.openNewGame(GameMode.fromDifficulty(difficulty = 3))
+                }
+                btnNormal.setOnClickListener {
+                    mainViewModel.openNewGame(GameMode.fromDifficulty(difficulty = 4))
+                }
+                btnHard.setOnClickListener {
+                    mainViewModel.openNewGame(GameMode.fromDifficulty(difficulty = 5))
+                }
             }
         }
         // Add onBackPressed callback
@@ -107,6 +113,8 @@ class GameFragment : Fragment() {
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
+        gameLogic = null
+        gameData = null
     }
 
     private fun showDialog(dialog: View) {

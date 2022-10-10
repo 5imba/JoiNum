@@ -1,8 +1,12 @@
 package com.bogleo.joinum.screens
 
+import android.content.Context
+import android.media.AudioManager
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
@@ -24,6 +28,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setTransparentStatusBar()
+        viewModel.setThemeMode()
 
         // Screens navigation logic
         viewModel.navigateToFragment.observe(this) {
@@ -56,6 +61,20 @@ class MainActivity : AppCompatActivity() {
         super.onSaveInstanceState(outState)
     }
 
+    override fun onResume() {
+        super.onResume()
+        // Mute system sounds
+        val audioManager = getSystemService(Context.AUDIO_SERVICE) as AudioManager
+        audioManager.adjustStreamVolume(AudioManager.STREAM_SYSTEM, AudioManager.ADJUST_MUTE, 0)
+    }
+
+    override fun onPause() {
+        super.onPause()
+        // Unmute system sounds
+        val audioManager = getSystemService(Context.AUDIO_SERVICE) as AudioManager
+        audioManager.adjustStreamVolume(AudioManager.STREAM_SYSTEM, AudioManager.ADJUST_UNMUTE, 0)
+    }
+
     private fun setTransparentStatusBar() {
         WindowCompat.setDecorFitsSystemWindows(window, false)
         WindowInsetsControllerCompat(window, binding.root).let { controller ->
@@ -64,6 +83,8 @@ class MainActivity : AppCompatActivity() {
                 .BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
         }
     }
-}
 
-private const val CURRENT_FRAGMENT = "CURRENT_FRAGMENT"
+    companion object {
+        private const val CURRENT_FRAGMENT = "CURRENT_FRAGMENT"
+    }
+}

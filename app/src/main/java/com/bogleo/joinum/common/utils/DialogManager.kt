@@ -9,16 +9,22 @@ import android.view.animation.AnticipateOvershootInterpolator
 import android.view.animation.LinearInterpolator
 import android.view.animation.OvershootInterpolator
 import com.bogleo.joinum.common.extensions.setAllEnabled
+import com.bogleo.joinum.common.utils.sound.SoundItem
+import com.bogleo.joinum.common.utils.sound.SoundManager
 import javax.inject.Inject
 
-class DialogManager @Inject constructor() {
+class DialogManager @Inject constructor(
+    private val soundManager: SoundManager
+) {
 
     private val dialogStack: MutableList<View> = mutableListOf()
 
     private val duration = 350L
     private val translationTension = 0.5f
 
+    @Suppress("DEPRECATION")
     fun showDialog(dialog: View, mainLayer: View, hideable: Boolean = true, onMainLayerCallback: (() -> Unit)? = null) {
+        soundManager.play(SoundItem.Click())
         val prevDialog = dialogStack.lastOrNull()
 
         if(prevDialog != null) {
@@ -57,7 +63,9 @@ class DialogManager @Inject constructor() {
         }
     }
 
+    @Suppress("DEPRECATION")
     fun closeLastDialog(mainLayer: View, onMainLayerCallback: (() -> Unit)? = null): Boolean {
+        soundManager.play(SoundItem.Close())
         val currentDialog = dialogStack.lastOrNull()
 
         return if(currentDialog != null) {

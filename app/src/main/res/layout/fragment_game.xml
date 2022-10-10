@@ -66,7 +66,8 @@
                 android:scaleType="centerInside"
                 android:src="@drawable/ic_pause"
                 app:tint="?attr/colorSecondary"
-                tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
+                tools:ignore="TouchTargetSizeCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
         </LinearLayout>
 
         <com.bogleo.joinum.common.game.GameView
@@ -82,7 +83,7 @@
 
     </FrameLayout>
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/container_pause"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -98,7 +99,12 @@
             android:background="@drawable/shape_rounded_rect"
             android:backgroundTint="?attr/colorPrimaryVariant"
             android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <TextView
                 android:id="@+id/txt_pause_label"
@@ -109,7 +115,8 @@
                 android:layout_marginTop="@dimen/dlg_margin_top"
                 android:layout_marginBottom="@dimen/dlg_margin_inner"
                 android:gravity="center"
-                android:text="@string/pause" />
+                android:text="@string/pause"
+                tools:ignore="TextContrastCheck" />
 
             <Button
                 android:id="@+id/btn_resume_game"
@@ -118,7 +125,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/dlg_margin_horizontal"
                 android:layout_marginVertical="@dimen/dlg_margin_inner"
-                android:text="@string/resume" />
+                android:text="@string/resume"
+                tools:ignore="TextContrastCheck" />
 
             <Button
                 android:id="@+id/btn_new_game_game"
@@ -127,7 +135,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/dlg_margin_horizontal"
                 android:layout_marginVertical="@dimen/dlg_margin_inner"
-                android:text="@string/new_game" />
+                android:text="@string/new_game"
+                tools:ignore="TextContrastCheck" />
 
             <Button
                 android:id="@+id/btn_main_menu_game"
@@ -144,22 +153,21 @@
 
         <ImageButton
             android:id="@+id/btn_close_pause"
-            android:layout_width="@dimen/dlg_btn_size"
-            android:layout_height="@dimen/dlg_btn_size"
-            android:layout_alignTop="@+id/layout_container_pause"
-            android:layout_alignEnd="@+id/layout_container_pause"
-            android:layout_marginTop="@dimen/dlg_margin_inner"
-            android:layout_marginEnd="@dimen/dlg_margin_inner"
-            android:background="@drawable/btn_circle_ripple"
+            style="@style/ImageButton.Close"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:contentDescription="@string/close_pause_menu"
-            android:scaleType="centerInside"
             android:src="@drawable/ic_cross"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:tint="@color/gray_800"
+            app:layout_constraintEnd_toEndOf="@+id/layout_container_pause"
+            app:layout_constraintTop_toTopOf="@+id/layout_container_pause"
             tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
-    </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <include
+        android:id="@+id/difficulty_popup"
+        layout="@layout/layout_difficult_popup" />
 
     <LinearLayout
         android:id="@+id/container_game_over"
@@ -241,87 +249,5 @@
             tools:ignore="TextContrastCheck,TouchTargetSizeCheck" />
 
     </LinearLayout>
-
-    <RelativeLayout
-        android:id="@+id/container_difficulty"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:visibility="gone">
-
-        <LinearLayout
-            android:id="@+id/layout_difficulty"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginHorizontal="@dimen/dlg_margin_outside"
-            android:background="@drawable/shape_rounded_rect"
-            android:backgroundTint="?attr/colorPrimaryVariant"
-            android:elevation="5dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/textView"
-                style="@style/TextAppearance.HeaderText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/dlg_margin_horizontal"
-                android:layout_marginTop="@dimen/dlg_margin_top"
-                android:layout_marginBottom="@dimen/dlg_margin_inner"
-                android:gravity="center"
-                android:text="@string/difficulty" />
-
-            <Button
-                android:id="@+id/btn_easy"
-                style="@style/MainButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/dlg_margin_horizontal"
-                android:layout_marginVertical="@dimen/dlg_margin_inner"
-                android:backgroundTint="?attr/colorPrimaryVariant"
-                android:text="@string/easy" />
-
-            <Button
-                android:id="@+id/btn_normal"
-                style="@style/MainButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/dlg_margin_horizontal"
-                android:layout_marginVertical="@dimen/dlg_margin_inner"
-                android:backgroundTint="?attr/colorPrimaryVariant"
-                android:text="@string/normal" />
-
-            <Button
-                android:id="@+id/btn_hard"
-                style="@style/MainButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/dlg_margin_horizontal"
-                android:layout_marginTop="@dimen/dlg_margin_inner"
-                android:layout_marginBottom="@dimen/dlg_margin_bottom"
-                android:backgroundTint="?attr/colorPrimaryVariant"
-                android:text="@string/hard" />
-
-        </LinearLayout>
-
-        <ImageButton
-            android:id="@+id/btn_close_difficulty"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_alignTop="@+id/layout_difficulty"
-            android:layout_alignEnd="@+id/layout_difficulty"
-            android:layout_marginTop="@dimen/dlg_margin_inner"
-            android:layout_marginEnd="@dimen/dlg_margin_inner"
-            android:background="@drawable/btn_circle_ripple"
-            android:contentDescription="@string/close_pause_menu"
-            android:elevation="5dp"
-            android:scaleType="centerInside"
-            android:src="@drawable/ic_cross"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:tint="@color/gray_800"
-            tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
-
-    </RelativeLayout>
 
 </FrameLayout>

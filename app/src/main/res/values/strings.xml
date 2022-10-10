@@ -20,6 +20,19 @@
 
     <string name="game_over_score">Your Score:</string>
     <string name="game_over_best_score">Best Score:</string>
-    <string name="logo_left" ><b><big>J</big><small>OI</small></b></string>
-    <string name="logo_right"><b><big>N</big><small>UM</small></b></string>
+    <string name="logo_left"><big>J</big><b><small>OI</small></b></string>
+    <string name="logo_right"><big>N</big><b><small>UM</small></b></string>
+    <string name="stats">Statistics</string>
+    <string name="settings">Settings</string>
+    <string name="sounds">Sounds</string>
+    <string name="theme">Theme</string>
+
+
+    <string-array name="theme_modes_array">
+        <item>System</item>
+        <item>Light</item>
+        <item>Dark</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
