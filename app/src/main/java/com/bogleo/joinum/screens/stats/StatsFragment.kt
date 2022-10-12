@@ -8,12 +8,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.bogleo.joinum.R
-import com.bogleo.joinum.common.adapters.recycler.ListItem
 import com.bogleo.joinum.common.adapters.recycler.ListItemAdapter
 import com.bogleo.joinum.common.adapters.recycler.listitems.StatsBlockListItem
 import com.bogleo.joinum.common.adapters.recycler.listitems.StatsContentListItem
-import com.bogleo.joinum.data.StatisticItem
 import com.bogleo.joinum.databinding.FragmentStatsBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -68,9 +65,4 @@ class StatsFragment : Fragment() {
         super.onDestroy()
         _binding = null
     }
-
-    private fun test(s: String): String {
-        return  s
-    }
-
 }
