@@ -26,7 +26,7 @@ class GameLogic @Inject constructor(
     private val _score: MutableLiveData<String> = MutableLiveData<String>()
     val score: LiveData<String> = _score
 
-    private var onGameOverCallback: ((score: Int, bestScore: Int) -> Unit)? = null
+    private var onGameOverCallback: ((score: Int, currentBestScore: Int, totalBestScore: Int) -> Unit)? = null
 
     private var currentInputCell: PointCell? = null
     private var currentHoveredPointCell: PointCell? = null
@@ -62,7 +62,9 @@ class GameLogic @Inject constructor(
         _score.postValue(scoreText)
     }
 
-    fun setOnGameOverListener(onGameOverCallback: ((score: Int, bestScore: Int) -> Unit)) {
+    fun setOnGameOverListener(
+        onGameOverCallback: (score: Int, currentBestScore: Int, totalBestScore: Int) -> Unit
+    ) {
         this.onGameOverCallback = onGameOverCallback
     }
 
@@ -134,6 +136,8 @@ class GameLogic @Inject constructor(
                         }
                         // Play sound
                         soundManager.play(SoundItem.SetPoint())
+                        // Increase statistics
+                        gameData.incrementMostMoves()
                     }
                 }
             }
@@ -158,7 +162,12 @@ class GameLogic @Inject constructor(
         // If none found call GameOver and clear session data
         val isGameOver = !emptyCellLeft
         if(isGameOver) {
-            onGameOverCallback?.let { it(gameData.currentScore, gameData.bestScore) }
+            onGameOverCallback?.let { it(
+                gameData.currentScore,
+                gameData.currentBestScore,
+                gameData.totalBestScore
+            ) }
+            gameData.incrementFinishedGames()
             gameData.clearData()
         }
         return isGameOver
@@ -207,7 +216,7 @@ class GameLogic @Inject constructor(
             // Play sound
             soundManager.play(SoundItem.Combine())
         } else {
-            // Search is finish, reinit values
+            // Search is finish, reset values
             allowInput = true
             comboCounter = 0
         }
@@ -269,6 +278,7 @@ class GameLogic @Inject constructor(
             if(currentPointCell.tier > gameData.maxTier[colorIndex]) {
                 gameData.maxTier[colorIndex] = currentPointCell.tier
             }
+            gameData.setMaxTier(currentPointCell.tier)
             gameData.currentScore += samePointCells.size * comboCounter + transitGroupedCells.size
             _score.postValue(scoreText)
             saveGame()
@@ -293,5 +303,4 @@ class GameLogic @Inject constructor(
     private fun PointCell.isSame(pointCell: PointCell): Boolean {
         return tier == pointCell.tier && color == pointCell.color
     }
-
 }

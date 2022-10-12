@@ -14,6 +14,7 @@ import com.bogleo.joinum.common.utils.sound.SoundItem
 import com.bogleo.joinum.common.utils.sound.SoundManager
 import com.bogleo.joinum.screens.game.GameFragment
 import com.bogleo.joinum.screens.mainmenu.MainMenuFragment
+import com.bogleo.joinum.screens.stats.StatsFragment
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
@@ -59,6 +60,11 @@ class MainViewModel @Inject constructor() : ViewModel() {
             session = GameMode.SESSION_RESUME
         )
         showFragment(fragment = GameFragment(), backStack = addToBackStack, GameFragment.TAG)
+    }
+
+    fun openStats() {
+        soundManager.play(SoundItem.Click())
+        showFragment(fragment = StatsFragment(), backStack = true, StatsFragment.TAG)
     }
 
     fun setThemeMode() {

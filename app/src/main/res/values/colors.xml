@@ -20,5 +20,7 @@
     <color name="gray_600">#FF757575</color>
     <color name="gray_800">#FF424242</color>
     <color name="gray_900">#FF212121</color>
+
+    <color name="fade">#40000000</color>
     
 </resources>

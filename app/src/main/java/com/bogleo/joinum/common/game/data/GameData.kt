@@ -4,7 +4,6 @@ import com.bogleo.joinum.common.game.models.PointCellData
 import com.bogleo.joinum.common.utils.SharedPrefs
 import javax.inject.Inject
 import javax.inject.Singleton
-import kotlin.math.max
 
 @Singleton
 class GameData @Inject constructor(
@@ -19,8 +18,27 @@ class GameData @Inject constructor(
     var currentScore: Int = 0
         set(value) {
             field = value
-            bestScore = max(bestScore, value)
+            with(sharedPrefs) {
+                // Set total BestScore
+                if(value > totalBestScore) {
+                    setBestScore(
+                        value = value
+                    )
+                }
+                // Set current BestScore
+                if(value > currentBestScore) {
+                    setBestScore(
+                        value = value,
+                        difficult = currentDifficult
+                    )
+                }
+            }
         }
+
+    val totalBestScore: Int get() = sharedPrefs.getBestScore()
+    val currentBestScore: Int get() = sharedPrefs.getBestScore(difficult = currentDifficult)
+
+    private val currentDifficult: Int get() = gameMode.colorsCount
 
     fun init() {
         val savedGameData = sharedPrefs.gameData
@@ -70,10 +88,50 @@ class GameData @Inject constructor(
         saveGameData(listOf(), listOf(), false)
     }
 
-    var bestScore: Int
-        get() = sharedPrefs.bestScore
-        set(value) {
-            sharedPrefs.bestScore = value
+    fun incrementMostMoves() {
+        with(sharedPrefs) {
+            // Total moves
+            setMostMoves(
+                value = getMostMoves() + 1
+            )
+            // Current difficulty moves
+            setMostMoves(
+                value = getMostMoves(difficult = currentDifficult) + 1,
+                difficult = currentDifficult
+            )
         }
+    }
+
+    fun incrementFinishedGames() {
+        with(sharedPrefs) {
+            // Total games
+            setFinishedGames(
+                value = getFinishedGames() + 1
+            )
+            // Current difficulty games
+            setFinishedGames(
+                value = getFinishedGames(difficult = currentDifficult) + 1,
+                difficult = currentDifficult
+            )
+        }
+    }
+
+    fun setMaxTier(tier: Int) {
+        with(sharedPrefs) {
+            // Total max tier
+            if(tier > getMaxTier()) {
+                setMaxTier(
+                    value = tier
+                )
+            }
+            // Current difficulty max tier
+            if(tier > getMaxTier(difficult = currentDifficult)) {
+                setMaxTier(
+                    value = tier,
+                    difficult = currentDifficult
+                )
+            }
+        }
+    }
 }
 

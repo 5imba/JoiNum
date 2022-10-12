@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import com.bogleo.joinum.common.game.data.GameMode
-import com.bogleo.joinum.common.utils.sound.SoundItem
 import com.bogleo.joinum.databinding.FragmentMainMenuBinding
 import com.bogleo.joinum.screens.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -47,14 +46,17 @@ class MainMenuFragment : Fragment() {
             btnNewGame.setOnClickListener {
                 viewModel.dialogManager.showDialog(
                     dialog = difficultyPopup.layoutDifficulty,
-                    mainLayer = containerMain
+                    mainLayer = containerMain,
+                    fadeLayer = fadeLayout
                 )
             }
             with(difficultyPopup) {
                 // Close difficulty popup
                 btnCloseDifficulty.setOnClickListener {
                     viewModel.dialogManager.closeLastDialog(
-                        mainLayer = containerMain
+                        mainLayer = containerMain,
+                        fadeLayer = fadeLayout
+
                     )
                 }
                 // Start New Game with selected difficulty
@@ -72,7 +74,8 @@ class MainMenuFragment : Fragment() {
             imgBtnSettings.setOnClickListener {
                 viewModel.dialogManager.showDialog(
                     dialog = settingsPopup.layoutSettings,
-                    mainLayer = containerMain
+                    mainLayer = containerMain,
+                    fadeLayer = fadeLayout
                 )
             }
             with(settingsPopup) {
@@ -86,10 +89,15 @@ class MainMenuFragment : Fragment() {
                 // Close settings popup
                 btnCloseSettings.setOnClickListener {
                     viewModel.dialogManager.closeLastDialog(
-                        mainLayer = containerMain
+                        mainLayer = containerMain,
+                        fadeLayer = fadeLayout
                     )
                 }
                 viewModel.spinnerHelper.setup(spinner = spinnerThemeMode)
+            }
+            // Show statistics fragment
+            imgBtnStats.setOnClickListener {
+                mainViewModel.openStats()
             }
         }
         // Add onBackPressed callback
@@ -106,7 +114,10 @@ class MainMenuFragment : Fragment() {
 
     private val onBackPressedCallback= object : OnBackPressedCallback(true) {
         override fun handleOnBackPressed() {
-            if(!viewModel.dialogManager.closeLastDialog(binding.containerMain)) {
+            if(!viewModel.dialogManager.closeLastDialog(
+                    mainLayer = binding.containerMain,
+                    fadeLayer = binding.fadeLayout)
+            ) {
                 isEnabled = false
                 requireActivity().onBackPressed()
                 isEnabled = true

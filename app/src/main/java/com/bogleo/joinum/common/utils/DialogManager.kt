@@ -3,6 +3,7 @@ package com.bogleo.joinum.common.utils
 import android.content.Context
 import android.graphics.Point
 import android.os.Build
+import android.util.Log
 import android.view.View
 import android.view.WindowManager
 import android.view.animation.AnticipateOvershootInterpolator
@@ -11,6 +12,7 @@ import android.view.animation.OvershootInterpolator
 import com.bogleo.joinum.common.extensions.setAllEnabled
 import com.bogleo.joinum.common.utils.sound.SoundItem
 import com.bogleo.joinum.common.utils.sound.SoundManager
+import com.bogleo.joinum.screens.mainmenu.MainMenuFragment
 import javax.inject.Inject
 
 class DialogManager @Inject constructor(
@@ -18,12 +20,17 @@ class DialogManager @Inject constructor(
 ) {
 
     private val dialogStack: MutableList<View> = mutableListOf()
-
     private val duration = 350L
     private val translationTension = 0.5f
 
     @Suppress("DEPRECATION")
-    fun showDialog(dialog: View, mainLayer: View, hideable: Boolean = true, onMainLayerCallback: (() -> Unit)? = null) {
+    fun showDialog(
+        dialog: View,
+        mainLayer: View,
+        fadeLayer: View? = null,
+        hideable: Boolean = true,
+        onMainLayerCallback: (() -> Unit)? = null
+    ) {
         soundManager.play(SoundItem.Click())
         val prevDialog = dialogStack.lastOrNull()
 
@@ -37,6 +44,7 @@ class DialogManager @Inject constructor(
                 .setDuration(duration)
                 .start()
         } else {
+            fadeLayer?.visibility = View.VISIBLE
             mainLayer.setAllEnabled(enabled = false)
             onMainLayerCallback?.let { it() }
         }
@@ -64,7 +72,11 @@ class DialogManager @Inject constructor(
     }
 
     @Suppress("DEPRECATION")
-    fun closeLastDialog(mainLayer: View, onMainLayerCallback: (() -> Unit)? = null): Boolean {
+    fun closeLastDialog(
+        mainLayer: View,
+        fadeLayer: View? = null,
+        onMainLayerCallback: (() -> Unit)? = null
+    ): Boolean {
         soundManager.play(SoundItem.Close())
         val currentDialog = dialogStack.lastOrNull()
 
@@ -103,6 +115,7 @@ class DialogManager @Inject constructor(
                     }
                     .start()
             } else {
+                fadeLayer?.visibility = View.GONE
                 mainLayer.setAllEnabled(enabled = true)
                 onMainLayerCallback?.let { it() }
             }
@@ -112,9 +125,15 @@ class DialogManager @Inject constructor(
         }
     }
 
-    fun clearAllAndShowDialog(dialog: View, mainLayer: View, hideable: Boolean = true, onMainLayerCallback: (() -> Unit)? = null) {
+    fun clearAllAndShowDialog(
+        dialog: View,
+        mainLayer: View,
+        fadeLayer: View? = null,
+        hideable: Boolean = true,
+        onMainLayerCallback: (() -> Unit)? = null
+    ) {
         clearDialogStack()
-        showDialog(dialog, mainLayer, hideable, onMainLayerCallback)
+        showDialog(dialog, mainLayer, fadeLayer, hideable, onMainLayerCallback)
     }
 
     private fun clearDialogStack() {

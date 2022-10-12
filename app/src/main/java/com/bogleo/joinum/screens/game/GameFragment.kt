@@ -41,7 +41,7 @@ class GameFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         _binding = FragmentGameBinding.inflate(inflater, container, false)
-        return binding.root
+        return _binding?.root
     }
 
     @SuppressLint("SetTextI18n")
@@ -60,20 +60,24 @@ class GameFragment : Fragment() {
                 }
                 // Game Over
                 val scorePrefix = requireContext().getString(R.string.game_over_score)
-                val bestScorePrefix = requireContext().getString(R.string.game_over_best_score)
-                gLogic.setOnGameOverListener { score, bestScore ->
+                val currentBestScorePrefix = requireContext().getString(R.string.game_over_best_score)
+                val totalBestScorePrefix = requireContext().getString(R.string.game_over_total_best_score)
+                gLogic.setOnGameOverListener { score, currentBestScore, totalBestScore ->
                     txtScoreGameOver.text = "$scorePrefix $score"
-                    if(bestScore > 0) {
-                        txtBestScoreGameOver.visibility = View.VISIBLE
-                        txtBestScoreGameOver.text = "$bestScorePrefix $bestScore"
+                    if(currentBestScore > 0) {
+                        txtCurrentBestScoreGameOver.visibility = View.VISIBLE
+                        txtCurrentBestScoreGameOver.text = "$currentBestScorePrefix $currentBestScore"
+                    }
+                    if(totalBestScore > 0) {
+                        txtTotalBestScoreGameOver.visibility = View.VISIBLE
+                        txtTotalBestScoreGameOver.text = "$totalBestScorePrefix $totalBestScore"
                     }
                     viewModel.dialogManager.clearAllAndShowDialog(
                         dialog = containerGameOver,
                         mainLayer = containerGame,
+                        fadeLayer = fadeLayout,
                         hideable = false
-                    ) {
-                        binding.gameView.isPaused = true
-                    }
+                    )
                 }
             }
 
@@ -120,7 +124,8 @@ class GameFragment : Fragment() {
     private fun showDialog(dialog: View) {
         viewModel.dialogManager.showDialog(
             dialog = dialog,
-            mainLayer = binding.containerGame
+            mainLayer = binding.containerGame,
+            fadeLayer = binding.fadeLayout,
         ) {
             binding.gameView.isPaused = true
         }
@@ -128,7 +133,8 @@ class GameFragment : Fragment() {
 
     private fun closeCurrentDialog() = viewModel.dialogManager
         .closeLastDialog(
-            mainLayer = binding.containerGame
+            mainLayer = binding.containerGame,
+            fadeLayer = binding.fadeLayout,
         ) {
             binding.gameView.isPaused = false
         }

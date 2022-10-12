@@ -11,6 +11,7 @@ import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import com.bogleo.joinum.R
+import com.bogleo.joinum.common.utils.sound.SoundItem
 import com.bogleo.joinum.databinding.ActivityMainBinding
 import com.bogleo.joinum.screens.game.GameFragment
 import com.bogleo.joinum.screens.mainmenu.MainMenuFragment
@@ -73,6 +74,11 @@ class MainActivity : AppCompatActivity() {
         // Unmute system sounds
         val audioManager = getSystemService(Context.AUDIO_SERVICE) as AudioManager
         audioManager.adjustStreamVolume(AudioManager.STREAM_SYSTEM, AudioManager.ADJUST_UNMUTE, 0)
+    }
+
+    override fun onBackPressed() {
+        viewModel.soundManager.play(SoundItem.Close())
+        super.onBackPressed()
     }
 
     private fun setTransparentStatusBar() {

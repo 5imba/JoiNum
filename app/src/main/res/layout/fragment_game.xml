@@ -83,6 +83,13 @@
 
     </FrameLayout>
 
+    <FrameLayout
+        android:id="@+id/fade_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/fade"
+        android:visibility="gone" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/container_pause"
         android:layout_width="match_parent"
@@ -213,7 +220,19 @@
                 android:gravity="center" />
 
             <TextView
-                android:id="@+id/txt_best_score_game_over"
+                android:id="@+id/txt_current_best_score_game_over"
+                style="@style/TextAppearance.HeaderText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dlg_margin_inner"
+                android:layout_marginVertical="@dimen/dlg_margin_inner"
+                android:autoSizeMaxTextSize="@dimen/txt_main_size"
+                android:autoSizeTextType="uniform"
+                android:gravity="center"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/txt_total_best_score_game_over"
                 style="@style/TextAppearance.HeaderText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
